@@ -1,0 +1,43 @@
+@use 'src/GlobalStyle/_globalStyle.module.scss';
+
+.navBar {
+    display: flex;
+    align-items: center;
+    height: auto;
+    background-color: var(--redux-color);
+    box-shadow: 0px 30px 10px -30px #111;    
+    h1 {
+        margin: 1rem 0;
+        font-size: 3rem;
+        color: aliceblue;
+    }
+    section {
+        @include globalStyle.container          
+    }
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .flexBtns {
+        display: flex;
+       
+    }
+    .wrapLinkBtns {
+        display: flex;
+        :nth-child(n){
+            @extend .btnControl;
+        }
+    }
+    .btnControl {
+        @include globalStyle.btnBasic;
+        display: flex;
+    }
+    .btnNotifications{
+        @extend .btnControl;
+        
+
+    }
+}

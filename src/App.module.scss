@@ -1,0 +1,13 @@
+@use 'src/GlobalStyle/_globalStyle.module.scss';
+@media screen {
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container {
+        @include globalStyle.container
+    }
+}
+  
+
