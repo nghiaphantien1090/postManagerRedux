@@ -7,7 +7,28 @@ export default function AddPostForm(){
 // const post=useGetPostsQuery()
     return(
         <section className={clsx(style.container)}>
-            AddPostForm
+            <h1>
+                Add a new post
+            </h1>
+            <form>
+                <h2>
+                    Post title:
+                </h2>
+                <input type="text" placeholder="What 's on your mind?" />
+                <h2>
+                    Author:
+                </h2>
+                <select>
+                    <option value="0" className={clsx(style.selectList)}>name1</option>
+                    <option value="1">name2</option>
+                    <option value="2">name1</option>
+                    <option value="3">name1</option>
+                </select>
+                <h2>
+                    Content:
+                </h2>
+                <textarea></textarea>
+            </form>
         </section>
     )
 }

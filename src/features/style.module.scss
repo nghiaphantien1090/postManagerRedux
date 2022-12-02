@@ -1,4 +1,45 @@
 @use 'src/GlobalStyle/_globalStyle.module.scss';
 .container{
-    background-color: yellow;
+    @include globalStyle.container;
+    h1{
+        opacity: 80%;
+        font-size: 2rem;
+    }
+    h2{
+        opacity: 80%;
+        font-size: 1rem;
+    }
+    input{
+        display: block;
+        padding: 1rem;
+        outline:  none;
+        height: 3rem;
+        border: 1px solid rgb(187, 166, 166);
+        width: 100%;
+        font-size: 1rem;
+    }
+    textarea{
+        border-left: 0px;
+        border-right: 0px;
+        padding: 1rem;
+        border: 1px solid rgb(187, 166, 166);
+        height: 5rem;
+        outline:  none;
+        width: 100%;
+        resize: none;
+        font-size: 1rem;
+    }
+    select{
+        border-left: 0;
+        border-right: 0;
+        border: 1px solid rgb(187, 166, 166);
+        height: 3rem;
+        outline:  none;
+        width: 100%;
+        line-height: 1;
+        font-size: 1rem;
+        margin-bottom: 0.5 rem;
+        font-size: 1rem;
+       
+}
 }
