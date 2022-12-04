@@ -3,7 +3,7 @@ import NavBar from './app/NavBar';
 import {BrowserRouter as Router,
         Route,
       Routes,
-    Navigate} from 'react-router-dom'
+       Navigate} from 'react-router-dom'
 import PostList from './features/posts/PostList';
 import UsersList from './features/users/UsersList';
 import NotificationsList from './features/notifications/NotificationsList';

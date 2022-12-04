@@ -6,7 +6,8 @@ import style from "../style.module.scss"
 export default function AddPostForm(){
 // const post=useGetPostsQuery()
     return(
-        <section className={clsx(style.container)}>
+        <section className={clsx(style.addPostForm)}>
+            <div className={clsx(style.container)}>
             <h1>
                 Add a new post
             </h1>
@@ -19,7 +20,7 @@ export default function AddPostForm(){
                     Author:
                 </h2>
                 <select>
-                    <option value="0" className={clsx(style.selectList)}>name1</option>
+                    <option value="0">name1</option>
                     <option value="1">name2</option>
                     <option value="2">name1</option>
                     <option value="3">name1</option>
@@ -29,6 +30,7 @@ export default function AddPostForm(){
                 </h2>
                 <textarea></textarea>
             </form>
+            </div>
         </section>
     )
 }

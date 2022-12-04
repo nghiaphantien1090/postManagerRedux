@@ -1,11 +1,10 @@
 import clsx from 'clsx'
 import style from './navBar.module.scss'
 import { Link } from 'react-router-dom'
-
 export default function NavBar(){
     return(
-        <div className={clsx(style.navBar)}>
-            <section>
+        <div className={style.nav}>
+            <div className={clsx(style.container)}>
                 <h1>
                     Redux Essentials Example
                 </h1>
@@ -27,7 +26,7 @@ export default function NavBar(){
                         </p>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     )
 }

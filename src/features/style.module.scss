@@ -1,45 +1,87 @@
 @use 'src/GlobalStyle/_globalStyle.module.scss';
-.container{
+
+.container {
     @include globalStyle.container;
-    h1{
-        opacity: 80%;
+}
+
+.addPostForm {
+    h1 {
+        opacity: 90%;
         font-size: 2rem;
     }
-    h2{
-        opacity: 80%;
+
+    h2 {
+        opacity: 90%;
         font-size: 1rem;
     }
-    input{
-        display: block;
+
+    input {
         padding: 1rem;
-        outline:  none;
+        display: block;
+        outline: none;
         height: 3rem;
-        border: 1px solid rgb(187, 166, 166);
-        width: 100%;
+        border: 1px solid var(--border-color);
         font-size: 1rem;
+        border-radius: 0.5rem;
+        
     }
-    textarea{
+
+    textarea {
+        padding: 1rem;
         border-left: 0px;
         border-right: 0px;
-        padding: 1rem;
-        border: 1px solid rgb(187, 166, 166);
-        height: 5rem;
-        outline:  none;
-        width: 100%;
-        resize: none;
+        border: 1px solid var(--border-color);
+        height: auto;
+        outline: none;
+        resize: vertical;
         font-size: 1rem;
+        border-radius: 0.5rem;
     }
-    select{
+
+    select {
+        height: 3rem;
+        padding-left: 1rem;
+        margin-bottom: 0.5 rem;
         border-left: 0;
         border-right: 0;
-        border: 1px solid rgb(187, 166, 166);
-        height: 3rem;
-        outline:  none;
-        width: 100%;
+        border: 1px solid var(--border-color);
+        outline: none;
         line-height: 1;
         font-size: 1rem;
-        margin-bottom: 0.5 rem;
         font-size: 1rem;
-       
+        border-radius: 0.5rem;
+    }
+    
+    :nth-child(n){
+        width: 100%;
+    }
 }
+.postExcerpt{
+    padding: 3px;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    h3{
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    .postContent{
+        p{
+            font-size: 1.1rem;
+
+        }
+    }
+}
+h1{
+    margin: 0;
+    font-size: 2rem;
+    opacity: 90%;
+}
+.my2{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.my1{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
