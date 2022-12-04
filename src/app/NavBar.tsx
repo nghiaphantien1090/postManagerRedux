@@ -10,7 +10,7 @@ export default function NavBar(){
                 </h1>
                 <div className={clsx(style.controls)}>
                     <div className={clsx(style.wrapLinkBtns)}>
-                        <Link to="/Posts" >
+                        <Link to="/" >
                             Posts
                         </Link>
                         <Link to="/Users" >
@@ -21,9 +21,7 @@ export default function NavBar(){
                         </Link>
                     </div>
                     <div className={clsx(style.btnNotifications)}>
-                        <p>
                             Notifications
-                        </p>
                     </div>
                 </div>
             </div>

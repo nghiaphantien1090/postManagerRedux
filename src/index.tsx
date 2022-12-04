@@ -6,13 +6,14 @@ import store from './app/store';
 import './index.module.scss';
 import { Provider } from 'react-redux';
 import { worker } from './server/server'
+import { useGetPostsQuery } from './features/api/apiSlice';
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 async function start() {
   // Start our mock API server
   await worker.start({ onUnhandledRequest: 'bypass' })
-root.render(
+  root.render(
   <Provider store={store}>
   <React.StrictMode>
       <App />

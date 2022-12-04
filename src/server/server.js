@@ -8,8 +8,8 @@ import { setRandom } from 'txtgen'
 
 import { parseISO } from 'date-fns'
 
-const NUM_USERS = 5
-const POSTS_PER_USER = 10
+const NUM_USERS = 4
+const POSTS_PER_USER = 4
 const RECENT_NOTIFICATIONS_DAYS = 7
 
 // Add an extra delay to all endpoints, so loading spinners show up.

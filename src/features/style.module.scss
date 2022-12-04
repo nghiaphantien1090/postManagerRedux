@@ -6,12 +6,10 @@
 
 .addPostForm {
     h1 {
-        opacity: 90%;
         font-size: 2rem;
     }
 
     h2 {
-        opacity: 90%;
         font-size: 1rem;
     }
 
@@ -61,6 +59,7 @@
     height: auto;
     border: 1px solid var(--border-color);
     border-radius: 0.5rem;
+    
     h3{
         margin: 0;
         font-size: 1.5rem;
@@ -68,9 +67,29 @@
     .postContent{
         p{
             font-size: 1.1rem;
+        }
+    }
+    .reactionButtons{
+        display: inline-block
+    }
+    .reactionButton{
+        @include globalStyle.btnBasic;
+        padding:  0.25rem 1rem;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 0.5rem;
+        background-color: white;
+        span{
+            color: rgb(36, 5, 5);
+        }
+        &:hover{
+            background-color: white;
+            text-decoration: none;
+            border-color: aqua;
 
         }
     }
+
 }
 h1{
     margin: 0;

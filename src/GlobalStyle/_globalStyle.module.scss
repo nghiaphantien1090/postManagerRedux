@@ -8,16 +8,17 @@
     align-content: center;
     justify-content: center;
     font-size: 1rem;
-    color: rgb(4, 58, 102);
+    color: rgb(25, 69, 114);
     font-weight: bold;
-    background-color:rgb(226, 101, 43);
+    background-color:rgb(231, 231, 238);
     text-decoration: none;
     outline: none;
     cursor: pointer;
     &:hover{
         text-decoration: underline;
-        background-color: burlywood;
+        background-color: rgb(185, 231, 142);
     }
+    overflow: auto;
 }
 @mixin container {
     max-width:  800px;

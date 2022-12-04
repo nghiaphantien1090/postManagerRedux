@@ -10,8 +10,24 @@ import NotificationsList from './features/notifications/NotificationsList';
 import AddPostForm from './features/posts/AddPostForm';
 import style from './App.module.scss'
 import clsx from 'clsx';
+import { useGetPostsQuery } from './features/api/apiSlice';
+
 
 function App() {
+ const { data:post
+,endpointName
+,fulfilledTimeStamp
+,status
+,isError
+,isFetching
+,isLoading
+,isSuccess
+,isUninitialized
+,refetch
+,requestId
+,startedTimeStamp} = useGetPostsQuery()
+  console.log('post',isSuccess,post)
+  
   return(
     <Router>
       <NavBar/>
