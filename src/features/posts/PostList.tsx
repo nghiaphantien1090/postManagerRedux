@@ -3,8 +3,13 @@ import style from '../style.module.scss'
 import clsx from "clsx";
 import { ReactionButton } from "./ReactionButtons";
 import { useSelector } from "react-redux";
+import { Post } from "../../type";
+import store from "../../app/store";
 
-function PostList() {
+function PostList({Posts}:{Posts:Post[]}) {
+    
+    console.log(store.getState())
+    Posts.map(post=>console.log(post.id))
 
     return (
         <>

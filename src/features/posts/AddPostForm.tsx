@@ -4,9 +4,6 @@ import clsx from "clsx";
 import style from "../style.module.scss"
 
 export default function AddPostForm(){
-// const post=useGetPostsQuery()
-// console.log(post)
-    console.log('re-render')
     return(
         <section className={clsx(style.addPostForm)}>
             <div className={clsx(style.container)}>

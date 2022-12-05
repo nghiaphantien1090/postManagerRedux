@@ -11,10 +11,12 @@ import AddPostForm from './features/posts/AddPostForm';
 import style from './App.module.scss'
 import clsx from 'clsx';
 import { useGetPostsQuery } from './features/api/apiSlice';
+import { data } from 'msw/lib/types/context';
+import { Post } from './type';
 
 
 function App() {
- const { data:post
+ const { data:posts=[]
 ,endpointName
 ,fulfilledTimeStamp
 ,status
@@ -26,15 +28,17 @@ function App() {
 ,refetch
 ,requestId
 ,startedTimeStamp} = useGetPostsQuery()
-  console.log('post',isSuccess,post)
-  
+console.log(posts)
+
+
   return(
     <Router>
       <NavBar/>
       <Routes>
         <Route path="/" element={
           <div className={clsx(style.container)}>
-            <AddPostForm /> <PostList />
+            <AddPostForm/> 
+            <PostList Posts={posts} />
           </div>
         } />
         <Route path="/Users" element={<UsersList />} />
