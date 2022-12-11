@@ -7,9 +7,19 @@ export type Post = {
     reactions:Reactions
 }
 export type Reactions = {
-    thumbsUp: number,
-    hooray: number,
-    heart: number,
-    rocket: number,
-    id: string
+    id: string,
+    thumbsUp: string,
+    hooray: string,
+    heart: string,
+    rocket: string,
+    eyes: string,
+    post: Post
 }
+export type User= {
+    id: string,
+    firstName: String,
+    lastName: String,
+    name: String,
+    username: String,
+    posts: Post[]
+  }

@@ -5,7 +5,6 @@ import faker from 'faker'
 import seedrandom from 'seedrandom'
 import { Server as MockSocketServer } from 'mock-socket'
 import { setRandom } from 'txtgen'
-
 import { parseISO } from 'date-fns'
 
 const NUM_USERS = 4
@@ -115,13 +114,11 @@ const createPostData = (user) => {
 // Create an initial set of users and posts
 for (let i = 0; i < NUM_USERS; i++) {
   const author = db.user.create(createUserData())
-
   for (let j = 0; j < POSTS_PER_USER; j++) {
     const newPost = createPostData(author)
     db.post.create(newPost)
   }
 }
-
 const serializePost = (post) => ({
   ...post,
   user: post.user.id,
@@ -136,7 +133,6 @@ export const handlers = [
   }),
   rest.post('/fakeApi/posts', function (req, res, ctx) {
     const data = req.body
-
     if (data.content === 'error') {
       return res(
         ctx.delay(ARTIFICIAL_DELAY_MS),

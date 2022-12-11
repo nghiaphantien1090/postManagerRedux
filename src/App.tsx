@@ -10,10 +10,10 @@ import NotificationsList from './features/notifications/NotificationsList';
 import AddPostForm from './features/posts/AddPostForm';
 import style from './App.module.scss'
 import clsx from 'clsx';
-import { useGetPostsQuery } from './features/api/apiSlice';
-import { data } from 'msw/lib/types/context';
+import { useGetPostsQuery,useGetUsersQuery } from './features/api/apiSlice';
 import { Post } from './type';
-
+import { useSelector } from 'react-redux';
+import store from './app/store';
 
 function App() {
  const { data:posts=[]
@@ -28,9 +28,9 @@ function App() {
 ,refetch
 ,requestId
 ,startedTimeStamp} = useGetPostsQuery()
-console.log(posts)
 
-
+const {data:Users=[]} =useGetUsersQuery()
+console.log('store',store.getState().api.queries)
   return(
     <Router>
       <NavBar/>

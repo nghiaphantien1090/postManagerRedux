@@ -5,27 +5,34 @@ import { ReactionButton } from "./ReactionButtons";
 import { useSelector } from "react-redux";
 import { Post } from "../../type";
 import store from "../../app/store";
+import { useGetUsersQuery } from "../api/apiSlice";
+
 
 function PostList({Posts}:{Posts:Post[]}) {
-    
-    console.log(store.getState())
+    const {data:Users=[]}=useGetUsersQuery()
+
+    const {api} = store.getState()
+
+    console.log('api query',api.queries)
+
     const PostExcept =Posts.map(post=>
     (
-            <div className={clsx(style.postExcerpt)}>
-                <h3 >
-                   {post.title} 
-                </h3>
-                <div className={clsx(style.my1)}>
-                <span>by Greg Marquardt</span> <i>about 2 hours ago</i>
-                </div>
-                <div className={clsx(style.postContent)}>
-                    <p>{post.content}</p>
-                </div>
-                <ReactionButton/>
+        <div key={post.id} className={clsx(style.postExcerpt)}>
+            <h3 >
+                {post.title}
+            </h3>
+            <div className={clsx(style.my1)}>
+                <span>by</span>
+                <span> {Users.find(user => user.id === post.user)?.firstName}</span>
+                <i>about 2 hours ago</i>
             </div>
+            <div className={clsx(style.postContent)}>
+                <p>{post.content}</p>
+            </div>
+            <ReactionButton reactions={post.reactions} />
+        </div>
     )
     )
-    console.log(PostExcept)
     return (
         <>
             <h1 className={clsx(style.my1)}>
