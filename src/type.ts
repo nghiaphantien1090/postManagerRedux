@@ -21,5 +21,5 @@ export type User= {
     lastName: String,
     name: String,
     username: String,
-    posts: Post[]
+  //  posts: Post[]
   }
