@@ -7,7 +7,6 @@ const usersAdapter = createEntityAdapter<User>({
   selectId: user => user.id,
   sortComparer: (a, b) => a.id.localeCompare(b.id),
 })
-
 const userSlice = createSlice(
   {
     name: 'users',

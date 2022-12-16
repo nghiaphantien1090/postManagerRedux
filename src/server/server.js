@@ -7,8 +7,8 @@ import { Server as MockSocketServer } from 'mock-socket'
 import { setRandom } from 'txtgen'
 import { parseISO } from 'date-fns'
 
-const NUM_USERS = 4
-const POSTS_PER_USER = 4
+const NUM_USERS = 8
+const POSTS_PER_USER = 5
 const RECENT_NOTIFICATIONS_DAYS = 7
 
 // Add an extra delay to all endpoints, so loading spinners show up.
@@ -129,6 +129,7 @@ const serializePost = (post) => ({
 export const handlers = [
   rest.get('/fakeApi/posts', function (req, res, ctx) {
     const posts = db.post.getAll().map(serializePost)
+    console.log('fetch all post')
     return res(ctx.delay(ARTIFICIAL_DELAY_MS), ctx.json(posts))
   }),
   rest.post('/fakeApi/posts', function (req, res, ctx) {
@@ -154,6 +155,7 @@ export const handlers = [
     const post = db.post.findFirst({
       where: { id: { equals: req.params.postId } },
     })
+    console.log('post from fakeserver...',post)
     return res(ctx.delay(ARTIFICIAL_DELAY_MS), ctx.json(serializePost(post)))
   }),
   rest.patch('/fakeApi/posts/:postId', (req, res, ctx) => {

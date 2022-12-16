@@ -23,3 +23,9 @@ export type User= {
     username: String,
   //  posts: Post[]
   }
+  export type Props={
+    id:string
+  }
+  export type postParams={
+   postId:string 
+  }

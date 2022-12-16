@@ -6,10 +6,16 @@ import { Post } from "../../type";
 import { useGetUsersQuery } from "../users/usersSlice";
 import { userStore } from "../users/usersSlice";
 import { selectUserById } from "../users/usersSlice";
-
+import { Link } from "react-router-dom";
+import { useGetPostQuery } from "../api/apiSlice";
+import { RouterProviderProps } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { createSelectAllUsers } from "../users/usersSlice";
 function PostList({ Posts }: { Posts: Post[] }) {
     const { data } = useGetUsersQuery()
     const stateUsers = userStore.getState()
+    const users  = createSelectAllUsers(stateUsers)
+    console.log(JSON.stringify(users))
     const PostExcept = Posts.map(post =>
     (
         <div key={post.id} className={clsx(style.postExcerpt)}>
@@ -17,13 +23,18 @@ function PostList({ Posts }: { Posts: Post[] }) {
                 {post.title}
             </h3>
             <div className={clsx(style.my1)}>
-                <span>by {selectUserById(stateUsers, post.user)?.name}</span>
-                <i>about 2 hours ago</i>
+                <span>by {selectUserById(stateUsers, post.user)?.name}</span>&nbsp;&nbsp; 
+                <i> about 2 hours ago</i>
             </div>
             <div className={clsx(style.postContent)}>
                 <p>{post.content}</p>
             </div>
             <ReactionButton reactions={post.reactions} />
+            <div className={clsx(style.btnViewPost)}>
+                <Link to={`/posts/${post.id}`} >
+                     View post
+                </Link>
+            </div>
         </div>
     )
     )

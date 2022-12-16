@@ -54,6 +54,7 @@
         width: 100%;
     }
 }
+
 .postExcerpt{
     margin:1.5rem 0;
     padding: 5px;
@@ -69,7 +70,7 @@
     .postContent{
         p{
             font-size: 1.1rem;
-            height: 3rem;
+            height:3rem;
             overflow: hidden;
         }
     }
@@ -94,6 +95,31 @@
         }
     }
 
+    .btnViewPost{
+        @include globalStyle.btnBasic;
+        margin-top :1rem;
+        margin-bottom: 1rem;
+        padding:0.5rem;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-style: normal;
+        &:hover{
+            text-decoration: none;
+            background-color: rgb(235, 243, 243);
+        }
+        :nth-child(n){
+            text-decoration: none;
+            border-color: rgb(229, 235, 235);
+            color: red;
+            &:hover{
+                text-decoration: none;
+                font-style: normal;
+            }
+        }
+     
+    }
 }
 h1{
     margin: 0;
@@ -107,4 +133,11 @@ h1{
 .my1{
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+.overflowVisible {
+    p {
+        font-size: 1.1rem;
+        height: auto;
+        overflow: visible;
+    }
 }
